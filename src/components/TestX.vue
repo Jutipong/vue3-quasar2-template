@@ -7,6 +7,8 @@ let title = $ref('title');
 const result = computed(() => {
   return msg + '_' + title;
 });
+let todo = $ref<ITodo>();
+console.log(todo);
 </script>
 
 <template>
