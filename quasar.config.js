@@ -78,6 +78,9 @@ module.exports = configure(function (/* ctx */) {
         [
           'unplugin-auto-import/vite',
           {
+            eslintrc: {
+              enabled: true, // <-- this
+            },
             // targets to transform
             include: [
               /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
@@ -91,11 +94,15 @@ module.exports = configure(function (/* ctx */) {
               'vue',
               'vue-router',
             ],
+            // Filepath to generate corresponding .d.ts file.
+            // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
+            // Set `false` to disable.
+            // dts: './auto-imports.d.ts',
             // Auto import for module exports under directories
             // by default it only scan one level of modules under the directory
             dirs: [
-              // './hooks',
-              // './composables' // only root modules
+              './src/stores',
+              // './composables', // only root modules
               // './composables/**', // all nested modules
               // ...
             ],
