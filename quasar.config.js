@@ -70,11 +70,50 @@ module.exports = configure(function (/* ctx */) {
       // distDir
 
       // extendViteConf (viteConf) {},
-      // viteVuePluginOptions: {},
+      viteVuePluginOptions: {
+        reactivityTransform: true,
+      },
 
-      // vitePlugins: [
-      //   [ 'package-name', { ..options.. } ]
-      // ]
+      vitePlugins: [
+        [
+          'unplugin-auto-import/vite',
+          {
+            eslintrc: {
+              enabled: true, // <-- this
+            },
+            // targets to transform
+            include: [
+              /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+              /\.vue$/,
+              /\.vue\?vue/, // .vue
+              /\.md$/, // .md
+            ],
+            // global imports to register
+            imports: [
+              // presets
+              'vue',
+              'vue-router',
+            ],
+            // Filepath to generate corresponding .d.ts file.
+            // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
+            // Set `false` to disable.
+            // dts: './auto-imports.d.ts',
+            // Auto import for module exports under directories
+            // by default it only scan one level of modules under the directory
+            dirs: [
+              './src/stores',
+              // './composables', // only root modules
+              // './composables/**', // all nested modules
+              // ...
+            ],
+            // Custom resolvers, compatible with `unplugin-vue-components`
+            // see https://github.com/antfu/unplugin-auto-import/pull/23/
+            resolvers: [
+              /* ... */
+            ],
+          },
+        ],
+      ],
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer

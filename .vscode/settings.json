@@ -8,5 +8,6 @@
     "https://cdn.jsdelivr.net/npm/quasar@2.11.2/dist/quasar.prod.css"
   ],
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "cSpell.words": ["composables", "unplugin"]
 }
