@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { ITodo } from 'src/types/ITodo';
-
 const counter = useCounterStore();
 // const router = useRouter();
 const msg = $ref('Test');
@@ -14,7 +13,6 @@ console.log(todo);
 </script>
 
 <template>
-  <!-- <div class="q-pa-md q-gutter-sm">double: {{ foo.double }}</div> -->
   <div class="q-pa-md q-gutter-sm">Count: {{ counter.counter }}</div>
   <div class="q-pa-md q-gutter-sm">Msg: {{ msg }}</div>
   <div class="q-pa-md q-gutter-sm">Title: {{ title }}</div>
