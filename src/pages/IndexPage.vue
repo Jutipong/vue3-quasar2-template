@@ -1,8 +1,8 @@
 <script setup>
-import TestX from '../components/TestX.vue';
+import CustomerComponent from '../components/CustomerComponent.vue';
 </script>
 <template>
   <q-page class="row items-center justify-evenly">
-    <TestX />
+    <CustomerComponent />
   </q-page>
 </template>
