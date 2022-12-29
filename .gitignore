@@ -32,6 +32,6 @@ yarn-error.log*
 *.njsproj
 *.sln
 
-auto-imports-components.d.ts
+components.d.ts
 auto-imports.d.ts
 .eslintrc-auto-import.json
