@@ -9,6 +9,9 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 const { configure } = require('quasar/wrappers');
+const { QuasarResolver } = require('unplugin-vue-components/resolvers');
+const AutoImportsComponents = require('unplugin-vue-components/vite');
+const AutoImports = require('unplugin-auto-import/vite');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -75,46 +78,28 @@ module.exports = configure(function (/* ctx */) {
       },
 
       vitePlugins: [
-        [
-          'unplugin-auto-import/vite',
-          {
-            // targets to transform
-            include: [
-              /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
-              /\.vue$/,
-              /\.vue\?vue/, // .vue
-              /\.md$/, // .md
-            ],
-            // global imports to register
-            imports: [
-              // presets
-              'vue',
-              'vue-router',
-              'quasar',
-            ],
-            // Auto import for module exports under directories
-            // by default it only scan one level of modules under the directory
-            dirs: [
-              './src/stores/**',
-              './src/types/**',
-              // './composables', // only root modules
-              // './composables/**', // all nested modules
-              // ...
-            ],
-            // Filepath to generate corresponding .d.ts file.
-            // Defaults to './auto-imports.d.ts' when `typescript` is installed locally.
-            // Set `false` to disable.
-            dts: './auto-imports.d.ts',
-            // Enable auto import by filename for default module exports under directories
-            defaultExportByFilename: false,
-            // Custom resolvers, compatible with `unplugin-vue-components`
-            // see https://github.com/antfu/unplugin-auto-import/pull/23/
-            resolvers: [
-              /* ... */
-            ],
-            vueTemplate: false,
+        AutoImportsComponents({
+          dirs: ['src/components'],
+          dts: 'auto-imports-components.d.ts',
+          deep: true,
+          directoryAsNamespace: true,
+          resolvers: [QuasarResolver()],
+        }),
+        AutoImports({
+          include: [
+            /\.[tj]sx?$/, // .ts, .tsx, .js, .jsx
+            /\.vue$/,
+            /\.vue\?vue/, // .vue
+            /\.md$/, // .md
+          ],
+          // global imports to register
+          imports: ['vue', 'vue-router', 'quasar'],
+          dirs: ['src/stores/**'],
+          dts: 'auto-imports.d.ts',
+          eslintrc: {
+            enabled: true,
           },
-        ],
+        }),
       ],
     },
 
