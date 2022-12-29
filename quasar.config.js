@@ -80,6 +80,7 @@ module.exports = configure(function (/* ctx */) {
       vitePlugins: [
         AutoImportsComponents({
           dirs: ['src/components'],
+          dts: false,
           deep: true,
           directoryAsNamespace: true,
           resolvers: [QuasarResolver()],
