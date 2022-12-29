@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import { ITodo } from 'src/types/ITodo';
+
 const counter = useCounterStore();
 // const router = useRouter();
 const msg = $ref('Test');
@@ -7,7 +9,7 @@ let title = $ref('title');
 const result = computed(() => {
   return msg + '_' + title;
 });
-let todo = $ref<ITodo>();
+let todo = $ref<ITodo>({ Id: '01' });
 console.log(todo);
 </script>
 

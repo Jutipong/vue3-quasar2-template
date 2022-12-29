@@ -90,6 +90,7 @@ module.exports = configure(function (/* ctx */) {
               // presets
               'vue',
               'vue-router',
+              'quasar',
             ],
             // Auto import for module exports under directories
             // by default it only scan one level of modules under the directory
