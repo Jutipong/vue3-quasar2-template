@@ -80,7 +80,7 @@ module.exports = configure(function (/* ctx */) {
       vitePlugins: [
         AutoImportsComponents({
           dirs: ['src/components'],
-          dts: 'auto-imports-components.d.ts',
+          dts: false,
           deep: true,
           directoryAsNamespace: true,
           resolvers: [QuasarResolver()],
@@ -95,7 +95,6 @@ module.exports = configure(function (/* ctx */) {
           // global imports to register
           imports: ['vue', 'vue-router', 'quasar'],
           dirs: ['src/stores/**'],
-          dts: 'auto-imports.d.ts',
           eslintrc: {
             enabled: true,
           },
