@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { IOption, IUser } from '@/types/login';
 
 export const useLoginStore = defineStore('loginStore', {

@@ -98,7 +98,7 @@ module.exports = configure(function (/* ctx */) {
             /\.md$/, // .md
           ],
           // global imports to register
-          imports: ['vue', 'vue-router', 'quasar'],
+          imports: ['vue', 'vue-router', 'quasar', 'pinia'],
           dirs: ['src/stores/**', 'src/utils/**'],
           // eslintrc: {
           //   enabled: true,

@@ -1,4 +1,3 @@
-import { defineStore } from 'pinia';
 import { IDrawer } from '@/types/layout';
 
 export const useDrawer = defineStore('drawer', {
