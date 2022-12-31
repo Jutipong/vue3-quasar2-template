@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { IDrawer } from '@/types/Layouts';
+import { IDrawer } from '@/types/layout';
 const props = defineProps<{
   rootPath: string;
   childrenPath?: string;

@@ -4,12 +4,18 @@
       <q-toolbar>
         <q-btn flat dense round :icon="leftDrawerOpen ? 'menu_open' : 'menu'" @click="toggleLeftDrawer" />
         <q-space />
+
+        <q-space />
+        <!-- <toolbar-item-right /> -->
+        <!-- <ToolbarItemRight class="q-mr-sm" /> -->
+
         <q-btn
           class="hover:bg-red-600"
           align="around"
           :label="$q.screen.gt.sm ? 'Logout' : ''"
           flat
-          icon="logout"></q-btn>
+          icon="logout"
+          @click="logout()"></q-btn>
       </q-toolbar>
     </q-header>
 
@@ -26,7 +32,20 @@
 </template>
 
 <script setup lang="ts">
+const { dialog } = useQuasar();
+const $router = useRouter();
 let leftDrawerOpen = $ref(false);
 const toggleLeftDrawer = () => (leftDrawerOpen = !leftDrawerOpen);
-// const route = useRoute();
+const logout = () => {
+  dialog({
+    html: true,
+    title: '<div class="text-red"> Confirm logout</div>',
+    message: 'Are you sure you want to log out?',
+    cancel: true,
+    persistent: true,
+    ok: {
+      color: 'negative',
+    },
+  }).onOk(() => $router.push('/login'));
+};
 </script>

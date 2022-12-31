@@ -9,7 +9,6 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     Address: typeof import('./src/components/Address.vue')['default']
     Customer: typeof import('./src/components/Customer.vue')['default']
-    GroupInfo: typeof import('./src/components/Group/Info.vue')['default']
     LayoutsDrawer: typeof import('./src/components/Layouts/Drawer.vue')['default']
     LayoutsExpansion: typeof import('./src/components/Layouts/Expansion.vue')['default']
     LayoutsItem: typeof import('./src/components/Layouts/Item.vue')['default']

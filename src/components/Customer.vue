@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ITodo } from 'src/types/ITodo';
+import { ITodo } from '@/types/todo';
 const counter = useCounterStore();
 const msg = $ref('Test');
 onMounted(() => console.log('ok'));
