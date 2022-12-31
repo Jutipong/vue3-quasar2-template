@@ -6,28 +6,28 @@ export const useDrawer = defineStore('drawer', {
     menus: [
       {
         label: 'Home',
-        icon: 'mdi:home',
+        icon: 'home',
         path: '/',
         active: false,
       },
       {
         label: 'Master',
-        icon: 'mdi:home',
+        icon: 'home',
         path: '/master',
         active: false,
         childrens: [
-          { label: 'User', icon: 'mdi:home', path: '/user', active: false },
-          { label: 'Role', icon: 'mdi:home', path: '/role', active: false },
+          { label: 'User', icon: 'home', path: '/user', active: false },
+          { label: 'Role', icon: 'home', path: '/role', active: false },
         ],
       },
       {
         label: 'Config',
-        icon: 'mdi:home',
+        icon: 'home',
         path: '/config',
         active: false,
         childrens: [
-          { label: 'User', icon: 'mdi:home', path: '/user', active: false },
-          { label: 'Role', icon: 'mdi:home', path: '/role', active: false },
+          { label: 'User', icon: 'home', path: '/user', active: false },
+          { label: 'Role', icon: 'home', path: '/role', active: false },
         ],
       },
     ] as IDrawer[],
