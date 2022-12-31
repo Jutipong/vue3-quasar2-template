@@ -1,7 +1,4 @@
 <template>
-  <div></div>
+  <h2>Config Role</h2>
 </template>
-
 <script setup lang="ts"></script>
-
-<style scoped></style>

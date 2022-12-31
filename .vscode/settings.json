@@ -4,10 +4,8 @@
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.codeActionsOnSave": ["source.fixAll.eslint"],
-  "html-css-class-completion.remoteStyleSheets": [
-    "https://cdn.jsdelivr.net/npm/quasar@2.11.2/dist/quasar.prod.css"
-  ],
+  "html-css-class-completion.remoteStyleSheets": ["https://cdn.jsdelivr.net/npm/quasar@2.11.2/dist/quasar.prod.css"],
   "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["composables", "unplugin"]
+  "cSpell.words": ["childrens", "composables", "hoverable", "unplugin"]
 }

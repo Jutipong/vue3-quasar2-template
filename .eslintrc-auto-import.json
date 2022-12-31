@@ -52,6 +52,7 @@
     "useCssModule": true,
     "useCssVars": true,
     "useDialogPluginComponent": true,
+    "useDrawer": true,
     "useFormChild": true,
     "useLink": true,
     "useMeta": true,
