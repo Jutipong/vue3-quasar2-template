@@ -10,7 +10,7 @@
 
 const { configure } = require('quasar/wrappers');
 const path = require('path');
-const { QuasarResolver } = require('unplugin-vue-components/resolvers');
+// const { QuasarResolver } = require('unplugin-vue-components/resolvers');
 const AutoImportsComponents = require('unplugin-vue-components/vite');
 const AutoImports = require('unplugin-auto-import/vite');
 
@@ -88,7 +88,7 @@ module.exports = configure(function (/* ctx */) {
           dts: true,
           deep: true,
           directoryAsNamespace: true,
-          resolvers: [QuasarResolver()],
+          // resolvers: [QuasarResolver()],
         }),
         AutoImports({
           include: [

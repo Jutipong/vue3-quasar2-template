@@ -71,7 +71,7 @@ const store = useLoginStore();
 const onLogin = () => {
   store.toggleLoading();
   const lt = setTimeout(() => {
-    router.push('/home').then(() => {
+    router.push('/').then(() => {
       clearTimeout(lt);
       store.toggleLoading();
       store.$reset();
