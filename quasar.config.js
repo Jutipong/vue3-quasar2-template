@@ -9,6 +9,7 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js
 
 const { configure } = require('quasar/wrappers');
+const path = require('path');
 const { QuasarResolver } = require('unplugin-vue-components/resolvers');
 const AutoImportsComponents = require('unplugin-vue-components/vite');
 const AutoImports = require('unplugin-auto-import/vite');
@@ -72,7 +73,11 @@ module.exports = configure(function (/* ctx */) {
       // polyfillModulePreload: true,
       // distDir
 
-      // extendViteConf (viteConf) {},
+      extendViteConf(viteConf) {
+        Object.assign(viteConf.resolve.alias, {
+          '@': path.join(__dirname, './src'),
+        });
+      },
       viteVuePluginOptions: {
         reactivityTransform: true,
       },
@@ -80,7 +85,7 @@ module.exports = configure(function (/* ctx */) {
       vitePlugins: [
         AutoImportsComponents({
           dirs: ['src/components'],
-          dts: false,
+          dts: true,
           deep: true,
           directoryAsNamespace: true,
           resolvers: [QuasarResolver()],
