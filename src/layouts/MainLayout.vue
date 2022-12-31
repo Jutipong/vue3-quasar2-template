@@ -20,7 +20,7 @@
     </q-header>
 
     <!-- drawer -->
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="260">
+    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="270">
       <LayoutsDrawer />
     </q-drawer>
     <!-- end drawer -->
