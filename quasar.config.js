@@ -98,8 +98,15 @@ module.exports = configure(function (/* ctx */) {
             /\.md$/, // .md
           ],
           // global imports to register
-          imports: ['vue', 'vue-router', 'quasar', 'pinia'],
-          dirs: ['src/stores/**', 'src/utils/**'],
+          imports: [
+            'vue-router',
+            {
+              vue: ['ref', 'reactive', 'computed', 'watch', 'watchEffect', 'onMounted'],
+              pinia: ['defineStore'],
+              quasar: ['useQuasar'],
+            },
+          ],
+          dirs: ['src/stores/**'],
           // eslintrc: {
           //   enabled: true,
           // },

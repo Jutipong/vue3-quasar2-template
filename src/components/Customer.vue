@@ -6,12 +6,12 @@
 
 <script lang="ts" setup>
 import { ITodo } from '@/types/todo';
-const msg = $ref('Test');
-onMounted(() => console.log('ok'));
+
+let msg = $ref('Test');
 let title = $ref('title');
-const result = computed(() => {
-  return msg + '_' + title;
-});
 let todo = $ref<ITodo>({ Id: '01' });
+
+onMounted(() => console.log('ok'));
+const result = computed(() =>  msg + '_' + title);
 console.log(todo);
 </script>
