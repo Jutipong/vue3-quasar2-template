@@ -13,6 +13,7 @@ const path = require('path');
 // const { QuasarResolver } = require('unplugin-vue-components/resolvers');
 const AutoImportsComponents = require('unplugin-vue-components/vite');
 const AutoImports = require('unplugin-auto-import/vite');
+const ReactivityTransform = require('@vue-macros/reactivity-transform/vite');
 
 module.exports = configure(function (/* ctx */) {
   return {
@@ -78,11 +79,13 @@ module.exports = configure(function (/* ctx */) {
           '@': path.join(__dirname, './src'),
         });
       },
-      viteVuePluginOptions: {
-        reactivityTransform: true,
-      },
+
+      // viteVuePluginOptions: {
+      //   reactivityTransform: true,
+      // },
 
       vitePlugins: [
+        ReactivityTransform(),
         AutoImportsComponents({
           dirs: ['src/components'],
           dts: true,

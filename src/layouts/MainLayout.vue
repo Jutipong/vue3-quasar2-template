@@ -20,9 +20,9 @@
     </q-header>
 
     <!-- drawer -->
-    <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="270">
+    <!-- <q-drawer v-model="leftDrawerOpen" show-if-above bordered :width="270">
       <LayoutsDrawer />
-    </q-drawer>
+    </q-drawer> -->
     <!-- end drawer -->
 
     <q-page-container>
@@ -34,8 +34,8 @@
 <script setup lang="ts">
 const { dialog } = useQuasar();
 const $router = useRouter();
-let leftDrawerOpen = $ref(false);
-const toggleLeftDrawer = () => (leftDrawerOpen = !leftDrawerOpen);
+let leftDrawerOpen = ref(false);
+const toggleLeftDrawer = () => (leftDrawerOpen.value = !leftDrawerOpen);
 const logout = () => {
   dialog({
     html: true,

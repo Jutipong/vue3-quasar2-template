@@ -5,6 +5,7 @@
     "allowJs": true,
     "paths": {
       "@/*": ["src/*"]
-    }
+    },
+    "types": ["unplugin-vue-macros/macros-global", "@vue-macros/reactivity-transform/macros-global"]
   }
 }
