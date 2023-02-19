@@ -99,6 +99,7 @@ module.exports = configure(function (/* ctx */) {
           ],
           // global imports to register
           imports: [
+            // '@vueuse/core',
             'vue-router',
             {
               vue: ['ref', 'reactive', 'computed', 'watch', 'watchEffect', 'onMounted'],
@@ -116,7 +117,7 @@ module.exports = configure(function (/* ctx */) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#devServer
     devServer: {
-      open: false, // opens browser window automatically
+      open: true, // opens browser window automatically
     },
 
     // https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#framework
