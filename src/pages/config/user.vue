@@ -1,4 +1,6 @@
 <template>
-  <h2>Config User</h2>
+  <h2>{{ msg }}</h2>
 </template>
-<script setup lang="ts"></script>
+<script setup lang="ts">
+let msg = $ref('Config User');
+</script>
